@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'embed'], function() {
+Route::group(['prefix' => 'embed', 'middleware' => 'myframe'], function() {
     Route::get('/{uuid}', PlayStreamController::class)->name('playstream');
 });
 
